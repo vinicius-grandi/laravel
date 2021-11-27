@@ -4,6 +4,6 @@
 
 @section('content')
 
-<h1>Criação wow</h1>
+<h1>Criação</h1>
 
 @endsection
