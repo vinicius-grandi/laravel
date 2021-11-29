@@ -17,9 +17,16 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\StoreController;
 
 Route::get('/', [EventController::class, 'index']);
-Route::get('/events/create', [EventController::class, 'create']);
-Route::get('/contact', [ContactController::class, 'contact']);
 
+Route::get('/events/create', [EventController::class, 'create']);
+
+Route::get('/events/{id}', [EventController::class, 'show']);
+
+Route::post('/events', [EventController::class, 'store']);
+
+
+// Rotas inúteis só para exercitar
+Route::get('/contact', [ContactController::class, 'contact']);
 Route::get('/store', [StoreController::class, 'product']);
 
 

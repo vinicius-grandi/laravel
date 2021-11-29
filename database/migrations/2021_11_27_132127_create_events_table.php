@@ -20,6 +20,7 @@ class CreateEventsTable extends Migration
             $table->text("description");
             $table->string("city");
             $table->boolean("private");
+            $table->string("image");
         });
     }
 

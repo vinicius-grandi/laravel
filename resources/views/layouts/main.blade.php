@@ -17,12 +17,13 @@
         {{-- CSS da Aplicação --}}
         <link rel="stylesheet" href="/css/style.css">
         <script src="/js/script.js"></script>
+        <script src="/js/app.js"></script>
     </head>
     <body>
         <header>
             <nav class="navbar navbar-expand-lg navbar-light">
                 {{-- COLOQUE ABAIXO O COLLAPSE --}}
-                <div class=" navbar-collapse" id="navbar">
+                <div class="navbar-collapse" id="navbar">
                     <a href="/" class="navbar-brand">
                         <img src="/img/hdcevents_logo.svg" alt="HDC Events">
                     </a>
@@ -43,7 +44,16 @@
                 </div>
             </nav>
         </header>
-        <main>@yield('content')</main>
+        <main>
+            <div class="container-fluid">
+                <div class="row">
+                    @if(session('msg'))
+                    <p class="msg">{{session('msg')}}</p>
+                    @endif
+                    @yield('content')
+                </div>
+            </div>
+        </main>
         <footer>
             <p>HDC Events &copy; 2020</p>
         </footer>
