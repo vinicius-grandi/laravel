@@ -13,10 +13,18 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+        require('postcss-import'),
+        require('tailwindcss'),
+    ])
+    .browserSync({
+        proxy: 'http://127.0.0.1:8000',
+        files: ['resources/views/**/*.php', 'app/**/*.php', 'routes/**/*.php', 'public/js/*.js', 'public/css/*.css'],
+        notify: false
+       });
+    
 
-mix.browserSync({
-    proxy: 'http://www.claravel.com/',
-    notify: false
-});
+if (mix.inProduction()) {
+    mix.version();
+}
+
+mix.disableNotifications();
