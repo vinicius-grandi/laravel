@@ -1,2 +1,2 @@
 # laravel
- Estudando Larave com o canal Matheus Battisti - Hora de Codar
+ Estudando Laravel com o canal Matheus Battisti - Hora de Codar
